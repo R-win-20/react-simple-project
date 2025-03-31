@@ -1,0 +1,8 @@
+:root {
+  --bg-color: #02f4dd;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
