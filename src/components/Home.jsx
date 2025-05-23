@@ -1,14 +1,9 @@
 import { useTranslation } from "react-i18next";
 import bghero from "../assets/bghero.jpg";
-import bgvideo from "../assets/bgvideo.mp4";
 import f1 from "../assets/f1.jpg";
 import marketing from "../assets/marketing2.jpg";
 import Animtext from "./Animtext";
-import {
-  FaComputerMouse,
-  FaSearchengin,
-  FaTradeFederation,
-} from "react-icons/fa6";
+import { FaComputerMouse, FaSearchengin } from "react-icons/fa6";
 import dm1 from "../assets/dm1.webp";
 import dm2 from "../assets/dm2.webp";
 import dm3 from "../assets/dm3.jpeg";
@@ -38,8 +33,12 @@ import tender from "../assets/tender.png";
 import xproject from "../assets/xproject.png";
 import immacule from "../assets/immaculte.png";
 import vital from "../assets/vital.jpg";
+import femmesdyn from "../assets/femmesdyn.png";
+import innerchild from "../assets/innerchild.png";
+import loyalty from "../assets/loyalty.jpg";
 
 import Marquee from "react-fast-marquee";
+import CaseStudies from "./CaseStudies";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -51,6 +50,9 @@ const Home = () => {
         <img
           src={bghero}
           alt="Digital Marketing"
+          width={200}
+          height={200}
+          loading="lazy"
           className="object-cover relative w-full h-full"
         />
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-black opacity-75"></div>
@@ -63,7 +65,7 @@ const Home = () => {
               </h1>
               <p className="text-xl text-gray-400 font-light my-1">{t("i")}</p>
               <a
-                href=""
+                href="https://calendly.com/martifyagency/strategy-call"
                 className="font-light text-sm w-fit lg:text-lg bg-[#87cdea] px-4 py-2 text-black rounded-md mt-4"
               >
                 {t("j")}
@@ -87,13 +89,17 @@ const Home = () => {
       <section className="bg-white">
         <div className="px-5 md:px-10 lg:px-40 pt-10 pb-20">
           <video
-            className="video-js w-full h-screen object-cover rounded-xl"
+            className="video-js w-full h-screen object-contain rounded-xl"
             id="my-video"
             controls
             preload="auto"
             data-setup="{}"
+            loading="lazy"
           >
-            <source src={bgvideo} type="video/mp4"></source>
+            <source
+              src="https://www.martifyagency.com.au/videos/campaign.mp4"
+              type="video/mp4"
+            ></source>
           </video>
         </div>
       </section>
@@ -121,7 +127,7 @@ const Home = () => {
               <div className="px-4 py-2 border-2 border-black rounded-md w-fit hover:bg-black">
                 <a
                   href="https://calendly.com/martifyagency/strategy-call"
-                  target="__blank"
+                  target="_blank"
                   className="text-black text-sm lg:text-lg hover:text-white"
                 >
                   {t("n")}
@@ -134,7 +140,10 @@ const Home = () => {
               <img
                 src={f1}
                 alt="Martify Agency image"
-                className="object-contain rounded-md lg:hover:scale-110 transition-all duration-300 ease-in-out"
+                width={200}
+                height={200}
+                loading="lazy"
+                className="object-contain w-full h-full rounded-md lg:hover:scale-110 transition-all duration-300 ease-in-out"
               />
             </div>
           </div>
@@ -189,6 +198,8 @@ const Home = () => {
               <img
                 src={marketing}
                 alt="Martify Agency"
+                width={200}
+                height={200}
                 loading="lazy"
                 aria-placeholder=""
                 className="w-full h-80 rounded-md object-cover"
@@ -266,6 +277,24 @@ const Home = () => {
                 />
                 <img
                   src={acscleaning}
+                  alt="martify agency partners and clients"
+                  loading="lazy"
+                  className="w-20 h-20 object-contain mx-8"
+                />
+                <img
+                  src={femmesdyn}
+                  alt="martify agency partners and clients"
+                  loading="lazy"
+                  className="w-20 h-20 object-contain mx-8"
+                />
+                <img
+                  src={innerchild}
+                  alt="martify agency partners and clients"
+                  loading="lazy"
+                  className="w-20 h-20 object-contain mx-8"
+                />
+                <img
+                  src={loyalty}
                   alt="martify agency partners and clients"
                   loading="lazy"
                   className="w-20 h-20 object-contain mx-8"
@@ -363,11 +392,12 @@ const Home = () => {
               <div className="flex-1 bg-amber-300">
                 <iframe
                   className="w-full h-96 lg:h-[350px]"
-                  src="https://www.youtube.com/embed/fZVXhms2TUo?si=cbIR0cMbkeaFJVjc"
+                  src="https://www.youtube.com/embed/TOhm0o9jXm8?si=BCI-TjuxGWObG91O"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen=""
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>
@@ -420,8 +450,8 @@ const Home = () => {
             <h2 className="text-black text-2xl sm:text-3xl md:text-5xl font-bold text-center py-10">
               {t("ag")}
             </h2>
-            <div className="flex flex-col md:flex-row gap-14 md:gap-4">
-              <div className="w-full md:w-1/3">
+            <div className="flex flex-col md:flex-row gap-14 md:gap-20">
+              <div className="w-full md:w-1/2">
                 <div className="flex flex-col gap-4 items-center">
                   <span className="bg-white rounded-full p-5 w-fit">
                     <FaSearchengin className="object-contain w-8 h-8 text-[#87cdea]" />
@@ -434,7 +464,7 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-full md:w-1/3">
+              <div className="w-full md:w-1/2">
                 <div className="flex flex-col gap-4 items-center">
                   <span className="bg-white rounded-full p-5 w-fit">
                     <FaComputerMouse className="object-contain w-8 h-8 text-[#87cdea]" />
@@ -447,7 +477,7 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-full md:w-1/3">
+              {/* <div className="w-full md:w-1/3">
                 <div className="flex flex-col gap-4 items-center">
                   <span className="bg-white rounded-full p-5 w-fit">
                     <FaTradeFederation className="object-contain w-8 h-8 text-[#87cdea]" />
@@ -459,8 +489,32 @@ const Home = () => {
                     {t("am")}
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Client Success Stories
+          </h2>
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            See how we've helped businesses like yours achieve remarkable
+            results
+          </p>
+          <div className="px-2 sm:px-5">
+            <CaseStudies />
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="https://calendly.com/martifyagency/strategy-call"
+              className="font-light text-sm w-fit lg:text-lg bg-[#87cdea] px-4 py-2 text-black rounded-md mt-4"
+            >
+              {t("j")}
+            </a>
           </div>
         </div>
       </section>
@@ -502,6 +556,9 @@ const Home = () => {
                 <div className="w-full md:w-96 h-fil shadow-xl shadow-white hover:scale-105 ease-in-out transition-all">
                   <img
                     src={dm2}
+                    width={200}
+                    height={200}
+                    loading="lazy"
                     alt="graphics martify agency"
                     aria-placeholder=""
                     className="w-full h-full object-contain rounded-lg"
@@ -518,6 +575,10 @@ const Home = () => {
                 <div className="w-full md:w-96 h-fil shadow-xl shadow-white hover:scale-105 ease-in-out transition-all">
                   <img
                     src={dm3}
+                    width={200}
+                    height={200}
+                    loading="lazy"
+                    alt="Martify Agency Digital Marketing Agency"
                     className="w-full h-full object-contain rounded-lg"
                   />
                 </div>
@@ -532,6 +593,10 @@ const Home = () => {
                 <div className="w-full md:w-96 h-fit shadow-xl shadow-white hover:scale-105 ease-in-out transition-all">
                   <img
                     src={grow}
+                    width={200}
+                    height={200}
+                    loading="lazy"
+                    alt=""
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
@@ -624,8 +689,11 @@ const Home = () => {
             <div className="flex-1">
               <img
                 src={R}
+                width={200}
+                height={200}
+                loading="lazy"
                 alt=""
-                className="object-cover scale-100 hover:scale-105 ease-in duration-300 rounded-lg"
+                className="object-cover w-full h-full scale-100 hover:scale-105 ease-in duration-300 rounded-lg"
               />
             </div>
           </div>
@@ -643,13 +711,13 @@ const Home = () => {
         <div className="px-1 sm:px-10 md:px-40 py-20 bg-[#87cdea]">
           <div className="flex flex-col gap-10 items-center justify-center">
             <h3 className="text-6xl text-black font-semibold text-center">
-              Brand your Business with us Today
+              {t("be")}
             </h3>
             <a
               href="https://calendly.com/martifyagency/strategy-call"
               className="text-black border-2 border-black px-7 py-3 lg:hover:bg-black lg:hover:text-white rounded-md cursor-pointer"
             >
-              Get Started
+              {t("bf")}
             </a>
           </div>
         </div>
@@ -667,12 +735,11 @@ const Home = () => {
       <section>
         <div className="mx-1 sm:mx-10 md:mx-40 py-20">
           <div className="flex flex-col gap-10">
-            <h2 className="text-[#b7e3fa] text-6xl font-black text-center">
-              Branding
+            <h2 className="text-[#b7e3fa] text-6xl font-bold text-center">
+              {t("bg")}
             </h2>
             <span className="text-2xl text-gray-400 text-center">
-              We can brand, we can advertise, we can do everything to advance
-              your business
+              {t("bh")}
             </span>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               <div className="h-full">

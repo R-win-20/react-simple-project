@@ -3,7 +3,14 @@ import LanguageSelector from "./LanguageSelector";
 import logo from "/icons/logo.png";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { FaBars, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
+import {
+  FaBars,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -71,7 +78,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <LanguageSelector />
             <a
-              href=""
+              href="https://calendly.com/martifyagency/strategy-call"
               target="_blank"
               className="bg-[#87cdea] hidden md:flex px-4 py-2 rounded-md text-black hover:bg-white transition-all duration-75 ease-in"
             >
@@ -107,13 +114,35 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-5 mt-10 text-black">
-          <a href="#" className="text-lg">
+          <a
+            href="https://www.facebook.com/profile.php?id=100087426981747"
+            className="text-lg"
+          >
             <FaFacebook />
           </a>
-          <a href="#" className="text-lg">
+          <a
+            href="https://www.instagram.com/martifyagency/"
+            className="text-lg"
+          >
             <FaInstagram />
           </a>
-          <a href="#" className="text-lg">
+          <a
+            href="https://www.linkedin.com/company/martify-agency/"
+            className="text-lg"
+          >
+            <FaLinkedinIn />
+          </a>
+          <a
+            href="https://x.com/martifyagency/status/1791802461273088116?s=46"
+            className="text-lg"
+          >
+            <FaXTwitter />
+          </a>
+          <a
+            href="https://www.youtube.com/@Martifyagency"
+            target="_blank"
+            className="text-lg"
+          >
             <FaYoutube />
           </a>
         </div>

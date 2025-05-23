@@ -46,35 +46,35 @@ const Footer = () => {
               <a
                 href="https://www.facebook.com/profile.php?id=100087426981747"
                 target="_blank"
-                className="text-2xl bg-white flex items-center justify-center p-3 rounded-full"
+                className="text-lg sm:text-2xl bg-white flex items-center justify-center p-3 rounded-full"
               >
                 <FaFacebookF />
               </a>
               <a
                 href="https://www.instagram.com/martifyagency/"
                 target="_blank"
-                className="text-2xl bg-white flex items-center justify-center p-3 rounded-full"
+                className="text-lg sm:text-2xl bg-white flex items-center justify-center p-3 rounded-full"
               >
                 <FaInstagram />
               </a>
               <a
                 href="https://www.linkedin.com/company/martify-agency/"
                 target="_blank"
-                className="text-2xl bg-white flex items-center justify-center p-3 rounded-full"
+                className="text-lg sm:text-2xl bg-white flex items-center justify-center p-3 rounded-full"
               >
                 <FaLinkedinIn />
               </a>
               <a
                 href="https://x.com/martifyagency/status/1791802461273088116?s=46"
                 target="_blank"
-                className="text-2xl bg-white flex items-center justify-center p-3 rounded-full"
+                className="text-lg sm:text-2xl bg-white flex items-center justify-center p-3 rounded-full"
               >
                 <FaXTwitter />
               </a>
               <a
                 href="https://www.youtube.com/@Martifyagency"
                 target="_blank"
-                className="text-2xl bg-white flex items-center justify-center p-3 rounded-full"
+                className="text-lg sm:text-2xl bg-white flex items-center justify-center p-3 rounded-full"
               >
                 <FaYoutube />
               </a>

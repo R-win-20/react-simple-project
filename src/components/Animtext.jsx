@@ -8,7 +8,7 @@ const Animtext = () => {
         .split("")
         .map(
           (char, i) =>
-            `<span style="transform:rotate(${i * 4.8}deg)">${char}</span>`
+            `<span style="transform:rotate(${i * 7.8}deg)">${char}</span>`
         )
         .join("");
     }
