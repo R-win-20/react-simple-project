@@ -1,11 +1,15 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Notfound from "./components/Notfound";
-import Layout from "./components/Layout";
-import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
-import Team from "./components/Team";
+const Notfound = lazy(() => import("./components/Notfound"));
+const Layout = lazy(() => import("./components/Layout"));
+const Home = lazy(() => import("./components/Home"));
+const About = lazy(() => import("./components/About"));
+const Services = lazy(() => import("./components/Services"));
+const Contact = lazy(() => import("./components/Contact"));
+const Team = lazy(() => import("./components/Team"));
+const Terms = lazy(() => import("./components/Terms"));
+const Blog = lazy(() => import("./components/Blog"));
+
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -15,33 +19,69 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "/about-us",
-        element: <About />,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/our-services-and-features",
-        element: <Services />,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <Services />
+          </Suspense>
+        ),
       },
       {
         path: "/contact-us",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/meet-the-team",
-        element: <Team />,
-      },
-      {
-        path: "/",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <Team />
+          </Suspense>
+        ),
       },
     ],
   },
   {
+    path: "/blog-marketing-solutions",
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Blog />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/terms-and-conditions",
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Terms />
+      </Suspense>
+    ),
+  },
+  {
     path: "*",
-    element: <Notfound />,
+    element: (
+      <Suspense fallback={"Loading..."}>
+        <Notfound />
+      </Suspense>
+    ),
   },
 ]);
 

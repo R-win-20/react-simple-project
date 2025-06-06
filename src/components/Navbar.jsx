@@ -62,6 +62,8 @@ const Navbar = () => {
           <div className="w-8 h-8 lg:w-14 lg:h-14">
             <img
               src={logo}
+              width={200}
+              height={200}
               className="object-cover w-full h-full rounded-full"
               alt="Martify Agency"
               loading="lazy"
