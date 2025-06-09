@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import bghero from "../assets/bghero.jpg";
 import f1 from "../assets/f1.jpg";
-import marketing from "../assets/marketing2.jpg";
+import marketing from "../assets/marketing2.webp";
 import Animtext from "./Animtext";
 import { FaComputerMouse, FaSearchengin } from "react-icons/fa6";
 import dm1 from "../assets/dm1.webp";
@@ -39,9 +39,29 @@ import loyalty from "../assets/loyalty.jpg";
 
 import Marquee from "react-fast-marquee";
 import CaseStudies from "./CaseStudies";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+
+const textVariants = {
+  initial: {
+    x: -200,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const Home = () => {
   const { t } = useTranslation();
+  const ref = useRef();
+
+  const isInView = useInView(ref);
 
   return (
     <div className="flex flex-col">
@@ -57,7 +77,7 @@ const Home = () => {
         />
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-black opacity-75"></div>
         <div className="absolute top-1/2 left-0 lg:left-1/2 transform lg:-translate-x-1/2 -translate-y-1/2 text-white text-center">
-          <div className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 items-center lg:items-end">
+          <div className="flex flex-col-reverse xl:flex-row gap-10 lg:gap-20 items-center xl:items-end">
             <div className="flex flex-col items-center px-2 lg:px-0">
               <span className="text-[#87cdea] text-sm">{t("g")}</span>
               <h1 className="text-4xl capitalize md:text-5xl font-bold my-2">
@@ -114,17 +134,38 @@ const Home = () => {
           ></path>
         </svg>
 
-        <div className="px-5 sm:px-10 lg:px-40 pb-20 flex flex-col lg:flex-row gap-20 bg-[#87cdea]">
+        <div
+          className="px-5 sm:px-10 lg:px-40 pb-20 flex flex-col lg:flex-row gap-20 bg-[#87cdea]"
+          ref={ref}
+        >
           <div className="flex-1">
-            <div className="flex flex-col gap-7 justify-center pt-10">
-              <span className="text-black text-lg font-semibold">{t("k")}</span>
-              <h2 className="text-5xl sm:text-6xl text-black font-bold">
+            <motion.div
+              variants={textVariants}
+              animate={isInView ? "animate" : "initial"}
+              className="flex flex-col gap-7 justify-center pt-10"
+            >
+              <motion.span
+                variants={textVariants}
+                className="text-black text-lg font-semibold"
+              >
+                {t("k")}
+              </motion.span>
+              <motion.h2
+                variants={textVariants}
+                className="text-5xl sm:text-6xl text-black font-bold"
+              >
                 {t("l")}
-              </h2>
-              <span className="text-gray-700 lg:text-xl leading-snug">
+              </motion.h2>
+              <motion.span
+                variants={textVariants}
+                className="text-gray-700 lg:text-xl leading-snug"
+              >
                 {t("m")}
-              </span>
-              <div className="px-4 py-2 border-2 border-black rounded-md w-fit hover:bg-black">
+              </motion.span>
+              <motion.div
+                variants={textVariants}
+                className="px-4 py-2 border-2 border-black rounded-md w-fit hover:bg-black"
+              >
                 <a
                   href="https://calendly.com/martifyagency/strategy-call"
                   target="_blank"
@@ -132,8 +173,8 @@ const Home = () => {
                 >
                   {t("n")}
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
           <div className="flex-1">
             <div className="w-full h-full">
@@ -143,7 +184,7 @@ const Home = () => {
                 width={200}
                 height={200}
                 loading="lazy"
-                className="object-contain w-full h-full rounded-md lg:hover:scale-110 transition-all duration-300 ease-in-out"
+                className="object-contain w-full h-full overflow-hidden rounded-md lg:hover:scale-110 transition-all duration-300 ease-in-out"
               />
             </div>
           </div>
@@ -174,19 +215,19 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row gap-6">
             <div className="flex-1">
               <div className="flex flex-col gap-3">
-                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-cyan-400">
+                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-cyan-400 cursor-pointer">
                   <h3 className="text-black text-2xl font-medium">{t("r")}</h3>
                   <span className="text-sm lg:text-xl text-gray-500">
                     {t("s")}
                   </span>
                 </div>
-                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-orange-600">
+                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-orange-600 cursor-pointer">
                   <h3 className="text-black text-2xl font-medium">{t("t")}</h3>
                   <span className="text-sm lg:text-xl text-gray-500">
                     {t("u")}
                   </span>
                 </div>
-                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-blue-600">
+                <div className="bg-white px-6 py-3 flex flex-col gap-3 border-l-4 border-blue-600 cursor-pointer">
                   <h3 className="text-black text-2xl font-medium">{t("v")}</h3>
                   <span className="text-sm lg:text-xl text-gray-500">
                     {t("w")}
@@ -537,7 +578,7 @@ const Home = () => {
             </h2>
             <div className="flex flex-col gap-5 mb-20">
               <div className="flex flex-col md:flex-row gap-10 items-center">
-                <div className="w-full md:w-96 h-fit shadow-xl shadow-white hover:scale-105 ease-in-out transition-all">
+                <div className="w-full md:w-96 h-fit shadow-xl shadow-white hover:scale-105 duration-100 ease-in-out transition-all">
                   <img
                     src={dm1}
                     alt="graphich martify"

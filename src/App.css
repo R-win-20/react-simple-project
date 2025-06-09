@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .open-mob-menu {
   position: fixed;
   top: 0;
@@ -50,7 +54,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: url("/icons/image01.png");
+  background: url("/icons/martify.webp");
   background-size: cover;
 }
 .text {

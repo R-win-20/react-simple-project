@@ -94,6 +94,13 @@ const Footer = () => {
               <a href="https://g.page/r/CTrG1Lhu-71OEAI/review" target="_blank">
                 Reviews
               </a>
+              <a
+                href="https://martifyagency.com.au/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Innovations
+              </a>
             </div>
             <p className="text-lg text-gray-700">ABN: 746847955121</p>
           </div>

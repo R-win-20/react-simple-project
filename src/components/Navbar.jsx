@@ -3,6 +3,8 @@ import LanguageSelector from "./LanguageSelector";
 import logo from "/icons/logo.png";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { motion, useInView } from "motion/react";
+
 import {
   FaBars,
   FaFacebook,
@@ -15,6 +17,8 @@ import {
 const Navbar = () => {
   const { t } = useTranslation();
   const menuRef = useRef();
+  const ref = useRef();
+  const isInView = useInView(ref);
   const openMenu = () => {
     menuRef.current.style.left = "0";
   };
@@ -50,6 +54,21 @@ const Navbar = () => {
     },
   ];
 
+  const menuVariants = {
+    initial: {
+      y: -70,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   const classLink = ({ isActive }) =>
     isActive
       ? "text-black lg:text-[#87cdea] capitalize text-lg"
@@ -57,8 +76,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute top-2 lg:top-1 left-0 right-0 w-full px-4 md:px-10 lg:px-40 mt-2 z-20 text-white">
-        <div className="flex items-center justify-between">
+      <div className="absolute top-2 lg:top-1 left-0 right-0 w-full px-4 md:px-10 xl:px-40 mt-2 z-20 text-white">
+        <div className="flex items-center justify-between" ref={ref}>
           <div className="w-8 h-8 lg:w-14 lg:h-14">
             <img
               src={logo}
@@ -69,13 +88,17 @@ const Navbar = () => {
               loading="lazy"
             />
           </div>
-          <div className="hidden lg:flex items-center gap-10 text-base">
+          <motion.div
+            variants={menuVariants}
+            animate={isInView ? "animate" : "initial"}
+            className="hidden lg:flex items-center gap-10 text-base"
+          >
             {links.map((link) => (
               <NavLink key={link.id} className={classLink} to={link.url}>
-                {link.name}
+                <motion.div variants={menuVariants}>{link.name}</motion.div>
               </NavLink>
             ))}
-          </div>
+          </motion.div>
 
           <div className="flex items-center gap-4">
             <LanguageSelector />
